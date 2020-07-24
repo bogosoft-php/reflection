@@ -52,10 +52,10 @@ final class CompositeParameterResolver implements IParameterResolver
     /**
      * @inheritDoc
      */
-    function resolve(ReflectionParameter $rp, IContainer $services, &$result): bool
+    function resolveParameter(ReflectionParameter $rp, IContainer $services, &$result): bool
     {
         foreach ($this->resolvers as $resolver)
-            if ($resolver->resolve($rp, $services, $result))
+            if ($resolver->resolveParameter($rp, $services, $result))
                 return true;
 
         return false;

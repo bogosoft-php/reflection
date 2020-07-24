@@ -52,10 +52,10 @@ final class CompositePropertyResolver implements IPropertyResolver
     /**
      * @inheritDoc
      */
-    function resolve(ReflectionProperty $rp, IContainer $services, &$result): bool
+    function resolveProperty(ReflectionProperty $rp, IContainer $services, &$result): bool
     {
         foreach ($this->resolvers as $resolver)
-            if ($resolver->resolve($rp, $services, $result))
+            if ($resolver->resolveProperty($rp, $services, $result))
                 return true;
 
         return false;

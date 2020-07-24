@@ -28,7 +28,7 @@ final class ContainerParameterResolver implements IParameterResolver
     /**
      * @inheritDoc
      */
-    function resolve(ReflectionParameter $rp, IContainer $services, &$result): bool
+    function resolveParameter(ReflectionParameter $rp, IContainer $services, &$result): bool
     {
         if (
             null === ($type = $rp->getType())

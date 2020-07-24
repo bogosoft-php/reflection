@@ -6,7 +6,8 @@ use Psr\Container\ContainerInterface as IContainer;
 use ReflectionProperty;
 
 /**
- * Represents a strategy for resolving properties of a class.
+ * Represents a PSR-11 container-assisted strategy for resolving a
+ * {@see ReflectionProperty}.
  *
  * @package Bogosoft\Reflection
  */
@@ -23,5 +24,5 @@ interface IPropertyResolver
      *                                      the given property was successfully
      *                                      resolved.
      */
-    function resolve(ReflectionProperty $rp, IContainer $services, &$result): bool;
+    function resolveProperty(ReflectionProperty $rp, IContainer $services, &$result): bool;
 }

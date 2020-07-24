@@ -6,8 +6,8 @@ use Psr\Container\ContainerInterface as IContainer;
 use ReflectionParameter;
 
 /**
- * Represents a strategy for resolving the value of a method or function
- * parameter from a service resolution container.
+ * Represents a container-assisted strategy for resolving a
+ * {@see ReflectionParameter}.
  *
  * @package Bogosoft\Reflection
  */
@@ -24,5 +24,5 @@ interface IParameterResolver
      *                                       the value of the given parameter
      *                                       was successfully resolved.
      */
-    function resolve(ReflectionParameter $rp, IContainer $services, &$result): bool;
+    function resolveParameter(ReflectionParameter $rp, IContainer $services, &$result): bool;
 }

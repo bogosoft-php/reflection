@@ -28,7 +28,7 @@ final class DefaultValueParameterResolver implements IParameterResolver
     /**
      * @inheritDoc
      */
-    function resolve(ReflectionParameter $rp, IContainer $services, &$result): bool
+    function resolveParameter(ReflectionParameter $rp, IContainer $services, &$result): bool
     {
         if (!$rp->isDefaultValueAvailable())
             return false;

@@ -24,7 +24,7 @@ class DefaultValueParameterResolverTest extends TestCase
 
         $container = new EmptyContainer();
 
-        $this->assertFalse($resolver->resolve($rp, $container, $result));
+        $this->assertFalse($resolver->resolveParameter($rp, $container, $result));
     }
 
     function testCanResolveWhenParameterHasDefaultValue(): void
@@ -41,7 +41,7 @@ class DefaultValueParameterResolverTest extends TestCase
 
         $container = new EmptyContainer();
 
-        $this->assertTrue($resolver->resolve($rp, $container, $result));
+        $this->assertTrue($resolver->resolveParameter($rp, $container, $result));
 
         $this->assertNull($result);
     }
