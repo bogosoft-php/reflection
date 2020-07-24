@@ -24,6 +24,11 @@ use ReflectionProperty;
  */
 class TypedResolver implements IParameterResolver, IPropertyResolver
 {
+    static function __set_state($an_array)
+    {
+        return new TypedResolver();
+    }
+
     /**
      * @inheritDoc
      */

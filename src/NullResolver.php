@@ -19,6 +19,11 @@ use ReflectionProperty;
  */
 final class NullResolver implements IParameterResolver, IPropertyResolver
 {
+    static function __set_state($an_array)
+    {
+        return new NullResolver();
+    }
+
     /**
      * @inheritDoc
      */
