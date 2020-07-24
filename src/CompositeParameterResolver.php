@@ -39,6 +39,17 @@ final class CompositeParameterResolver implements IParameterResolver
     }
 
     /**
+     * Add an additional parameter resolver to the current composite parameter
+     * resolver.
+     *
+     * @param IParameterResolver $resolver A parameter resolver.
+     */
+    function add(IParameterResolver $resolver): void
+    {
+        $this->resolvers[] = $resolver;
+    }
+
+    /**
      * @inheritDoc
      */
     function resolve(ReflectionParameter $rp, IContainer $services, &$result): bool

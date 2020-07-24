@@ -39,6 +39,17 @@ final class CompositePropertyResolver implements IPropertyResolver
     }
 
     /**
+     * Add an additional property resolver to the current composite property
+     * resolver.
+     *
+     * @param IPropertyResolver $resolver
+     */
+    function add(IPropertyResolver $resolver): void
+    {
+        $this->resolvers[] = $resolver;
+    }
+
+    /**
      * @inheritDoc
      */
     function resolve(ReflectionProperty $rp, IContainer $services, &$result): bool
